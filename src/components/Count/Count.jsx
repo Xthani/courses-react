@@ -21,7 +21,7 @@ function Count() {
     // }, []);
 
     useEffect(() => {
-        setColor((prevColor) => prevColor === 'gray' ? 'red' : 'gray');
+        setColor((prevColor  ) => prevColor === 'gray' ? 'red' : 'gray');
         return () => {
             console.log('22222');
         }

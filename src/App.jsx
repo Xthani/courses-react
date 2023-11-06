@@ -3,6 +3,7 @@ import styles from "./App.module.css";
 import AddTask from "./components/AddTask/AddTask";
 import List from "./components/List/List";
 import Count from "./components/Count/Count";
+import Posts from "./components/Posts/Posts";
 
 function App() {
   const [count, setCount] = useState(1);
@@ -22,7 +23,8 @@ function App() {
 
   return (
     <>
-      <h1 className={styles.list}>TODO LIST</h1>
+    <Posts/>
+      {/* <h1 className={styles.list}>TODO LIST</h1>
       <Count/>
       <button onClick={handleCount} >CLICK</button>
       <AddTask/>
@@ -32,7 +34,7 @@ function App() {
         arr={arr}
         number={number}
         name={name}
-      />
+      /> */}
     </>
   );
 }
