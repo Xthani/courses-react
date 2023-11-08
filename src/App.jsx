@@ -4,6 +4,7 @@ import AddTask from "./components/AddTask/AddTask";
 import List from "./components/List/List";
 import Count from "./components/Count/Count";
 import Posts from "./components/Posts/Posts";
+import UserList from "./components/UserList/UserList";
 
 function App() {
   const [count, setCount] = useState(1);
@@ -23,7 +24,8 @@ function App() {
 
   return (
     <>
-    <Posts/>
+    <UserList/>
+    {/* <Posts/> */}
       {/* <h1 className={styles.list}>TODO LIST</h1>
       <Count/>
       <button onClick={handleCount} >CLICK</button>
