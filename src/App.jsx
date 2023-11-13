@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from "react";
 import styles from "./App.module.css";
 import AddTask from "./components/AddTask/AddTask";
@@ -23,6 +24,8 @@ function App() {
     setCount(2);
   }
 
+  console.log('App');
+
   return (
     <>
     <TodoList/>
@@ -41,6 +44,6 @@ function App() {
       /> */}
     </>
   );
-}
+};
 
 export default App;

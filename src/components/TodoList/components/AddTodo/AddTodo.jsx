@@ -10,6 +10,8 @@ function AddTodo ({
         setEditableTask,
         setTasks
     }) {
+    console.log('AddTodo');
+
     const onSubmit = (e) => {
         e.preventDefault();
         const todo = util(e.target);
