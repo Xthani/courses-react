@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 import AddTodo from "./components/AddTodo/AddTodo";
 import List from "./components/List/List";
@@ -11,16 +11,35 @@ function TodoList () {
     const [title, setTitle] = useState('');
     const [descriprion, setDescriprion] = useState('');
 
-    const deleteTask = (id) => {
-        setTasks((prev) => prev.filter((task) => task.id !== id));
-    }
+    useEffect(() => {
+        // console.log(tasks, 'useEffect');
+    }, [tasks]);
 
-    const editTask = (task) => {
+    // пример useMemo
+    const memo = useMemo(() => {
+        const result = tasks.sort((a, b) => a.title - b.title);
+        return result;
+    }, [tasks]);
+    const sortTask = () => {
+        const result = tasks.sort((a, b) => a.title - b.title);
+        return result;
+    }
+    let sortTasks = sortTask();
+
+    const deleteTask = useCallback((id) => {
+        console.log(tasks, 'deleteTask');
+        setTasks((prev) => prev.filter((task) => task.id !== id));
+    }, []);
+
+    const editTask = useCallback((task) => {
         const { title, descriprion } = task;
         setTitle(title);
         setDescriprion(descriprion);
         setEditableTask(task);
-    }
+    }, []);
+
+    console.log('TodoList');
+
 
     return (
         <>
@@ -34,6 +53,7 @@ function TodoList () {
                 setTasks={setTasks}
             />
             <List
+                memo={sortTasks}
                 tasks={tasks}
                 deleteTask={deleteTask}
                 editTask={editTask}
