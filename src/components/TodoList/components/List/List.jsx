@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './styles.module.css'
+import { useSelector } from 'react-redux';
 
 
 const List = React.memo(({
@@ -8,7 +9,9 @@ const List = React.memo(({
     editTask,
     memo
 }) => {
-console.log('List');
+// const call = (state) => state;
+const store = useSelector((state) => state.todoList);
+console.log(store, 'store');
 
 console.log(memo, 'memo');
 

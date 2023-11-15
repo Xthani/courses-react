@@ -1,5 +1,7 @@
+import { useDispatch } from "react-redux";
 import { util } from "../../../../utils/index";
 import s from "./styles.module.css";
+import { addTodo } from "../../../../store";
 
 function AddTodo ({
         title,
@@ -10,6 +12,16 @@ function AddTodo ({
         setEditableTask,
         setTasks
     }) {
+
+    const dispach = useDispatch();
+    const obj = {
+        title: 'title',
+        descripton: 'descripton',
+        id: 1321,
+    };
+    dispach(addTodo(obj));
+    
+
     console.log('AddTodo');
 
     const onSubmit = (e) => {
