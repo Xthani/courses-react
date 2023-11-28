@@ -25,4 +25,11 @@ function editTodo (todo) {
     }
 }
 
-export { addTodo, deleteTodo, editTodo };
+function onDoneTodo (data) {
+    return {
+        type: 'ON_DONE',
+        payload: data
+    }
+}
+
+export { addTodo, deleteTodo, editTodo, onDoneTodo };
