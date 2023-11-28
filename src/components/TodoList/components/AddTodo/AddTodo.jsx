@@ -22,10 +22,11 @@ function AddTodo ({
         };
 
         if (editableTask) {
-            dispatch(editTodo({...todo, id: editableTask.id}));
+            // TODO
+            dispatch(editTodo({...todo, id: editableTask.id, isDone: false}));
             setEditableTask(null);
         } else {
-            dispatch(addTodo({...todo, id: Math.random()}));
+            dispatch(addTodo({...todo, id: Math.random(), isDone: false}));
         }
 
         setTitle('');

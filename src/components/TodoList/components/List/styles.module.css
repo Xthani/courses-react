@@ -18,11 +18,23 @@
     width: 400px;
 }
 
+.taskDone {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(52, 50, 50);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 4px rgb(71, 65, 65);
+    width: 400px;
+    background-color: red;
+}
+
 .btnWrapper {
     margin-top: 10px;
     display: flex;
     justify-content: end;
     gap: 5px;
+    cursor: pointer;
 }
 
 .delete {

@@ -1,34 +1,17 @@
-import { useCallback, useState } from "react";
-
 import AddTodo from "./components/AddTodo/AddTodo";
 import List from "./components/List/List";
-import { useDispatch } from "react-redux";
-import {deleteTodo} from '../../store/actions';
 
-function TodoList () {
-    const dispatch = useDispatch();
-
-    // нужен для того чтобы отслеживать редактируемый объект
-    const [editableTask, setEditableTask] = useState(null);
-
-    // нужно для контролирование input
-    const [title, setTitle] = useState('');
-    const [descriprion, setDescriprion] = useState('');
-
-    const deleteTask = useCallback((id) => {
-        dispatch(deleteTodo(id));
-    }, []);
-
-    const editTask = useCallback((task) => {
-        const { title, descriprion } = task;
-        // записываем в input значения редактируемого объекта
-        setTitle(title);
-        setDescriprion(descriprion);
-        
-        // записываем в отдельный стейт объект редактируемой todo
-        setEditableTask(task);
-    }, []);
-
+function TodoList ({
+    title,
+    setTitle,
+    descriprion,
+    setDescriprion,
+    editableTask,
+    setEditableTask,
+    deleteTask,
+    editTask,
+    onDone,
+}) {
     return (
         <>
             <AddTodo
@@ -42,6 +25,7 @@ function TodoList () {
             <List
                 deleteTask={deleteTask}
                 editTask={editTask}
+                onDone={onDone}
             />
         </>
     );
