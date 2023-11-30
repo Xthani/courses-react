@@ -1,6 +1,9 @@
 import React from "react";
 
-const Posts = ({ posts, handleAddPost }) => {
+const Posts = ({ error, posts, handleAddPost }) => {
+
+    if (error) return <h1>{error}</h1>
+
     return (
         <>
             <button onClick={handleAddPost}>ADD</button>
