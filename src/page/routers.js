@@ -1,14 +1,28 @@
 import { createBrowserRouter } from "react-router-dom";
 import PostsPage from '../page/PostsPage/index'
+import Header from "../components/Header";
 
 const router = createBrowserRouter([
     {
       path: '/',
-      element: <PostsPage/>
+      element: <>
+        <Header/>
+        <PostsPage/>
+      </>
     },
     {
       path: '/users',
-      element: <div>users</div>
+      element: <>
+      <Header/>
+      <div>users</div>
+    </>
+    },
+    {
+      path: '/photos',
+      element: <>
+      <Header/>
+      <div>photos</div>
+    </>
     },
   ]);
 

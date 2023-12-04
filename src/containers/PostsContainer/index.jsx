@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addPosts } from "../../store/posts/slice";
 import { fetchPosts } from "../../store/posts/actions";
 import { getPosts } from "../../store/posts/selectors";
+import { Spin } from "antd";
 
 const PostsContainer = () => {
     const dispatch = useDispatch();
@@ -22,7 +23,10 @@ const PostsContainer = () => {
 
     return (
         <>
-            {isLoad ? <h1>Идет загрузка!</h1> : <Posts error={error} posts={posts} handleAddPost={handleAddPost} />}
+            <Spin spinning={isLoad}>
+                <Posts error={error} posts={posts} handleAddPost={handleAddPost}/>
+            </Spin>
+            {/* {isLoad ? <h1>Идет загрузка!</h1> : <Posts error={error} posts={posts} handleAddPost={handleAddPost} />} */}
         </>
     );
 }
