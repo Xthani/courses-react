@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import PostsPage from '../page/PostsPage/index'
 import Header from "../components/Header";
+import UsersContainer from "../containers/UsersContainer";
 
 const router = createBrowserRouter([
     {
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
       path: '/users',
       element: <>
       <Header/>
-      <div>users</div>
+      <UsersContainer/>
     </>
     },
     {

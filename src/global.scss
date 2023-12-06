@@ -1,0 +1,14 @@
+.ant {
+    &-btn {
+        background: rgb(56, 214, 24) !important;
+        border-radius: 0 !important;
+    }
+    &-card {
+        &-head {
+            background-color: green !important;
+        }
+        &-body {
+            background-color: red;
+        }
+    }
+  }

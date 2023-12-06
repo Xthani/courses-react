@@ -1,0 +1,13 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.item {
+    background-color: aquamarine;
+}
+
+.item2 {
+    background-color: rgb(216, 233, 31);
+}
+
